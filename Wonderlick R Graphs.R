@@ -58,26 +58,15 @@ qb = read.csv("C:\\Users\\afisher\\Documents\\Python Code\\Projects\\NFL\\QB_Won
 # Look at data
 glimpse(qb)
 
-
 # Scatterplot
 ggplot(qb) +
-  aes(x=Score, y=rating)+
-  geom_point()+
-  geom_smooth() 
-
-# Limit to QBs who played for at least 3 full seasons
-qb2 = qb %>%
-  filter(count > 48)
-
-# Scatterplot
-ggplot(qb2) +
-  aes(x=Score, y=rating)+
-  geom_point(color="indianred")+
+  aes(x=Score, y=Rate)+
+  geom_point(color="darkgreen", alpha=0.3)+
   geom_smooth(color="steelblue") +
   theme(plot.title = element_text(hjust = 0.5)) +
   labs(x="Wonderlic Score", 
        y="QB Ranking", 
-       title="Does the Wonderlic \nPredict NFL QB Success?") +
+       title="Does the Wonderlic \npredict NFL QB success?") +
   theme_Publication()
 
 
